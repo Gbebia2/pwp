@@ -300,6 +300,27 @@ section {
     background: #d47663;
 }
 
+#pwp-explainer {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.pwp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.pwp-letter {
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Adjusts size based on screen width */
+    font-weight: bold;
+    transition: font-size 0.3s ease-in-out;
+}
+
 footer {
     background-color: #4C7D67;
     color: white;

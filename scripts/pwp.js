@@ -134,4 +134,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initialize with first campaign text
     updateCampaign();
+
+// PWP Animation for Mobile
+let letters = document.querySelectorAll(".pwp-letter");
+let words = ["Psychological", "Wellbeing", "Pacesetters"];
+let index = 0;
+
+function cycleText() {
+    letters.forEach((letter, i) => {
+        letter.textContent = words[i]; // Show full word
+    });
+
+    setTimeout(() => {
+        letters.forEach((letter, i) => {
+            letter.textContent = words[i][0]; // Reset to initials
+        });
+    }, 1500); // Keep the full word visible for 1.5 seconds
+
+    index = (index + 1) % words.length; // Move to the next word
+}
+
+setInterval(cycleText, 3000); // Change every 3 seconds
+ 
 });
