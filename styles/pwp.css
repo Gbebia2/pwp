@@ -1,0 +1,269 @@
+/* General Styles */
+body {
+    font-family: 'kanit', sans-serif;
+    background-color: #FFF8F2;
+    color: #3D3D3D;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #5A8F7B;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    border-radius: 5px;
+    height: auto; /* Change from 100% */
+    max-height: 100vh; /* Prevents it from going beyond the screen */
+    background: #41695a;
+    color: white;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000; /* Ensures it's above other elements */
+    overflow-y: auto; /* Adds scrolling if content is too long */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 15px;
+    text-align: center;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background-color: #F4D7C8;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.preview-content img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#hero button, #about-us button {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 6px 9px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#about-us button {
+    position: absolute;
+    top: 125%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 6px 9px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#hero-prev, #about-prev {
+    left: 10px;
+}
+
+#hero-next, #about-next {
+    right: 10px;
+}
+
+#hero button:hover, #about-us button:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+
+#get-involved {
+    position: relative;
+    background: url('../images/terra_kulture.webp') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.involved-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+    padding: 40px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#get-involved h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#get-involved p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+#get-involved .cta {
+    display: inline-block;
+    background: #E58B75; /* CTA color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#get-involved .cta:hover {
+    background: #d6735f;
+}
+
+/* Campaigns Section */
+#campaigns {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background: url("../images/national_museum_lagos.webp") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.campaign-content {
+    max-width: 80%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+#campaign-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#campaign-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#campaign-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: var(--cta-color);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#campaign-link:hover {
+    background-color: darken(var(--cta-color), 10%);
+}
+
+/* Navigation Buttons */
+#prev-campaign, #next-campaign {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+#prev-campaign:hover, #next-campaign:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#prev-campaign {
+    left: 10px;
+}
+
+#next-campaign {
+    right: 10px;
+}
+
+
+
+/* Sections */
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+.cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #E58B75;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    background: #d47663;
+}
+
+footer {
+    background-color: #4C7D67;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
