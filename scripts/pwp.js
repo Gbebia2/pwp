@@ -87,49 +87,51 @@ document.addEventListener("DOMContentLoaded", function () {
     aboutPrevButton.addEventListener("click", prevAboutSlide);
     setInterval(nextAboutSlide, 5000); // Auto-switch every 5 seconds
 
-    document.addEventListener("DOMContentLoaded", function () {
-        // Campaigns Section - Only text changes, background stays the same
-        const campaignTitles = [
-            "Mental Health Awareness Week",
-            "Suicide Prevention Drive",
-            "Community Therapy Sessions",
-            "Mindfulness & Stress Management"
-        ];
-    
-        const campaignDescriptions = [
-            "Join us in raising awareness and breaking the stigma around mental health.",
-            "A movement to prevent suicide through education and support.",
-            "Free therapy sessions to promote emotional well-being in the community.",
-            "Helping individuals learn stress management techniques for a healthier mind."
-        ];
-    
-        let campaignIndex = 0;
-        const campaignTitleElement = document.querySelector("#campaign-title");
-        const campaignDescElement = document.querySelector("#campaign-description");
-        const prevCampaignBtn = document.querySelector("#prev-campaign");
-        const nextCampaignBtn = document.querySelector("#next-campaign");
-    
-        function updateCampaign() {
-            campaignTitleElement.textContent = campaignTitles[campaignIndex];
-            campaignDescElement.textContent = campaignDescriptions[campaignIndex];
+    // Campaigns Section - Only text changes, background stays the same
+    const campaigns = [
+        {
+            title: "Mental Health Awareness Week",
+            description: "Join us in raising awareness and breaking the stigma around mental health."
+        },
+        {
+            title: "Suicide Prevention Drive",
+            description: "A movement to prevent suicide through education and support."
+        },
+        {
+            title: "Community Therapy Sessions",
+            description: "Free therapy sessions to promote emotional well-being in the community."
+        },
+        {
+            title: "Mindfulness & Stress Management",
+            description: "Helping individuals learn stress management techniques for a healthier mind."
         }
-    
-        function nextCampaign() {
-            campaignIndex = (campaignIndex + 1) % campaignTitles.length;
-            updateCampaign();
-        }
-    
-        function prevCampaign() {
-            campaignIndex = (campaignIndex - 1 + campaignTitles.length) % campaignTitles.length;
-            updateCampaign();
-        }
-    
-        nextCampaignBtn.addEventListener("click", nextCampaign);
-        prevCampaignBtn.addEventListener("click", prevCampaign);
-    
-        // Auto-switch every 5 seconds
-        setInterval(nextCampaign, 5000);
-    });
-    
+    ];
 
+    let campaignIndex = 0;
+    const campaignTitleElement = document.querySelector("#campaign-title");
+    const campaignDescElement = document.querySelector("#campaign-description");
+
+    function updateCampaign() {
+        campaignTitleElement.textContent = campaigns[campaignIndex].title;
+        campaignDescElement.textContent = campaigns[campaignIndex].description;
+    }
+
+    document.querySelector("#next-campaign").addEventListener("click", function () {
+        campaignIndex = (campaignIndex + 1) % campaigns.length;
+        updateCampaign();
+    });
+
+    document.querySelector("#prev-campaign").addEventListener("click", function () {
+        campaignIndex = (campaignIndex - 1 + campaigns.length) % campaigns.length;
+        updateCampaign();
+    });
+
+    // Auto-switch every 5 seconds
+    setInterval(function () {
+        campaignIndex = (campaignIndex + 1) % campaigns.length;
+        updateCampaign();
+    }, 5000);
+
+    // Initialize with first campaign text
+    updateCampaign();
 });

@@ -17,9 +17,22 @@ header {
     color: white;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
     font-size: 1.5em;
     font-weight: bold;
+}
+
+.logo-img {
+    width: 25%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 20px;
+    margin-right: 5px;
 }
 
 .menu-toggle {
@@ -85,30 +98,32 @@ header {
     border-radius: 10px;
 }
 
-#hero button, #about-us button {
+#hero button{
     position: absolute;
     top: 45%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     color: white;
     border: none;
-    padding: 6px 9px;
-    font-size: 15px;
+    font-size: 1.5rem;
+    padding: 10px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 50%;
+    transition: 0.3s;
 }
 
 #about-us button {
     position: absolute;
-    top: 125%;
+    top: 85%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     color: white;
     border: none;
-    padding: 6px 9px;
-    font-size: 15px;
+    font-size: 1.5rem;
+    padding: 10px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 50%;
+    transition: 0.3s;
 }
 
 #hero-prev, #about-prev {
@@ -168,8 +183,6 @@ header {
 /* Campaigns Section */
 #campaigns {
     position: relative;
-    width: 100%;
-    height: 60vh;
     background: url("../images/national_museum_lagos.webp") center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -198,14 +211,14 @@ header {
 }
 
 #campaign-link {
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: var(--cta-color);
+display: inline-block;
+    background: #E58B75; /* CTA color */
     color: white;
-    font-weight: bold;
+    padding: 10px 20px;
     text-decoration: none;
+    font-weight: bold;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: background 0.3s ease;
 }
 
 #campaign-link:hover {
@@ -239,12 +252,38 @@ header {
     right: 10px;
 }
 
+#resources h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
+#resources p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+#resources .cta {
+    display: inline-block;
+    background: #E58B75; /* CTA color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#resources .cta:hover {
+    background: #d6735f;
+}
 
 /* Sections */
 section {
     padding: 40px;
     text-align: center;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .cta {
